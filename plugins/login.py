@@ -43,21 +43,16 @@ async def login(bot, message):
             HOME_TEXT.format(message.from_user.first_name, message.from_user.id, USER, USER, USER, OWNER), 
 			disable_web_page_preview=True,
 			reply_markup=InlineKeyboardMarkup(
-				[
-					[
-						InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
-						InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122")
-					],
-                    [
-                        InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
-						InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
-                    ],
-                    [
-                        InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin")
-
-                    ]
-					
-				]
+				[[
+		                InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
+                                InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
+                                ],[
+                                InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
+				InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
+                                ],[
+                                InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin"),
+                                InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
+                                ]]
 			)
 		)
         return
@@ -75,7 +70,7 @@ async def login(bot, message):
         await m.delete()
         await bot.send_photo(
             chat_id=message.from_user.id,
-            caption=f"You are already Logged In as {name}\n\n**Your Account Details**\n\n🏷 **Name**: {name}\n🔖 **Username**: {profile.username}\n📝 **Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
+            caption=f"You Are Already Logged In as {name}\n\n**Your Account Details**\n\n🏷 **Name**: {name}\n🔖 **Username**: {profile.username}\n📝 **Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
             photo=profilepic
             )
         return
@@ -94,7 +89,7 @@ async def login(bot, message):
             chat_id=message.from_user.id,
             document=f"./{username}",
             file_name=str(message.from_user.id),
-            caption="⚠️ KEEP THIS SESSION FILE SAFE AND DO NOT SHARE WITH ANYBODY"
+            caption="<b>Kᴇᴇᴘ Tʜɪs Sᴇssɪᴏɴ Fɪʟᴇ Sᴀғᴇ Aɴᴅ Dᴏɴ'ᴛ Sʜᴀʀᴇ Wɪᴛʜ Aɴʏʙᴏᴅʏ 😃</b>"
             )
         file_id=f.document.file_id
         await bot.send_message(message.from_user.id, f"Now go to [Heroku](https://dashboard.heroku.com/apps) and set Environment variable.\n\n\n**KEY**: <code>INSTA_SESSIONFILE_ID</code>\n\n**VALUE**: <code>{file_id}</code>\n\nIf you do not set this you may need to Login again When Heroku restarts.", disable_web_page_preview=True)
@@ -111,7 +106,7 @@ async def login(bot, message):
         await m.delete()
         await bot.send_photo(
             chat_id=message.from_user.id,
-            caption=f"🔓Succesfully Logged In as {name}\n\n**Your Account Details**\n\n🏷 **Name**: {name}\n🔖 **Username**: {profile.username}\n📝 **Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
+            caption=f"🔓 Succesfully Logged In as {name}\n\n**Your Account Details**\n\n🏷 **Name**: {name}\n🔖 **Username**: {profile.username}\n📝 **Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
             photo=profilepic
             )
     except TwoFactorAuthRequiredException:
@@ -135,7 +130,7 @@ async def login(bot, message):
                 chat_id=message.from_user.id,
                 document=f"./{username}",
                 file_name=str(message.from_user.id),
-                caption="⚠️ KEEP THIS SESSION FILE SAFE AND DO NOT SHARE WITH ANYBODY"
+                caption="<b>Kᴇᴇᴘ Tʜɪs Sᴇssɪᴏɴ Fɪʟᴇ Sᴀғᴇ Aɴᴅ Dᴏɴ'ᴛ Sʜᴀʀᴇ Wɪᴛʜ Aɴʏʙᴏᴅʏ 😃</b>"
                 )
             file_id=f.document.file_id
             await bot.send_message(message.from_user.id, f"Now go to [Heroku](https://dashboard.heroku.com/apps) and set Environment variable.\n\n\n**KEY**: <code>INSTA_SESSIONFILE_ID</code>\n\n**VALUE**: <code>{file_id}</code>\n\nIf you do not set this you may need to Login again When Heroku restarts.", disable_web_page_preview=True)
@@ -194,4 +189,4 @@ async def logout(bot, message):
         STATUS.remove(1)
         os.remove(f"./{USER}")
     else:
-        await message.reply_text("You are not Logged in\nUse /login first")
+        await message.reply_text("You Are Not Logged in\n\nUse /login first")
