@@ -86,8 +86,8 @@ async def post(bot, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Photos", callback_data=f"photos#{username}"),
-                        InlineKeyboardButton("Videos", callback_data=f"video#{username}")
+                        InlineKeyboardButton("📸 Pʜᴏᴛᴏs", callback_data=f"photos#{username}"),
+                        InlineKeyboardButton("📽 Vɪᴅᴇᴏs", callback_data=f"video#{username}")
                     ]
                 ]
             )
@@ -124,8 +124,8 @@ async def igtv(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Yes", callback_data=f"yesigtv#{username}"),
-                    InlineKeyboardButton("No", callback_data=f"no#{username}")
+                    InlineKeyboardButton("🔹 Yᴇs 🔹", callback_data=f"yesigtv#{username}"),
+                    InlineKeyboardButton("🔹 ɴᴏ 🔹", callback_data=f"no#{username}")
                 ]
             ]
         )
