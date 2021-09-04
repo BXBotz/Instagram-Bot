@@ -41,10 +41,7 @@ You have two Options:
 
 Just send any instagram username.
 
-For Example:
-<code>samantharuthprabhuoffl</code>
-<code>subin_p_s_</code>
-<code>_chill_manh_7</code>
+For Example : <code>BX_Botz</code>
 
 
 2. From URL:
@@ -92,7 +89,7 @@ Example: <code>/followers samantharuthprabhuoffl</code>
 
 /highlights <username> - Downloads highlights from given username, If nothing given your highlights will be downloaded.
 
-
+© [ʙx ʙᴏᴛᴢ](https://t.me/BX_Botz) 
 """
     HOME_TEXT = """
 <b>Helo, [{}](tg://user?id={})
@@ -104,9 +101,12 @@ But you can Deploy the same bot for your use from the below source code.
 Use /help to know What I can Do?</b>
 """
     HOME_TEXT_OWNER = """
-<b>Helo, [{}](tg://user?id={})
-I am your assistant to manage your Instagram account.
+Hai, [{}](tg://user?id={})
 
-Use /help to know what I can do for you.</b>
+`I am your assistant to manage your Instagram account`
+
+`For More Details Click` /help
+
+**Made With ❤ BY @BX_Botz**
 """
 
