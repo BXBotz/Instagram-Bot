@@ -45,23 +45,16 @@ async def account(bot, message):
             HOME_TEXT.format(message.from_user.first_name, message.from_user.id, USER, USER, USER, int(OWNER)), 
 			disable_web_page_preview=True,
 			reply_markup=InlineKeyboardMarkup(
-				[
-					[
-						InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
-						InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
-                        
-					],
-                    [
-                        InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
-						InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
-                    ],
-                    [
-                        InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin"),
-                        InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
-
-                    ]
-					
-				]
+				[[
+		                InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
+                                InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
+                                ],[
+                                InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
+				InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
+                                ],[
+                                InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin"),
+                                InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
+                                ]]
 			)
 		)
         return
@@ -110,14 +103,14 @@ async def account(bot, message):
             await bot.send_photo(
                         chat_id=message.from_user.id,
                         photo=profilepic,
-                        caption=f"🏷 **Name**: {name}\n🔖 **Username**: {profile.username}\n📝**Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
+                        caption=f"🏷 **Name**: {name}\n\n🔖 **Username**: {profile.username}\n📝 **Bio**: {bio}\n📍 **Account Type**: {acc_type(profile.is_private)}\n🏭 **Is Business Account?**: {yes_or_no(profile.is_business_account)}\n👥 **Total Followers**: {followers}\n👥 **Total Following**: {following}\n📸 **Total Posts**: {mediacount}\n📺 **IGTV Videos**: {igtvcount}",
                         reply_markup=reply_markup
                     )
         except Exception as e:
             await m.edit(e)
 
     else:
-        await message.reply_text("You must login first by /login")
+        await message.reply_text("You Must Login First BY /Login")
 
 
 @Client.on_message(filters.text & filters.private & filters.incoming)
@@ -127,23 +120,16 @@ async def _insta_post_batch(bot, message):
             HOME_TEXT.format(message.from_user.first_name, message.from_user.id, USER, USER, USER, int(OWNER)),
 			disable_web_page_preview=True,
 			reply_markup=InlineKeyboardMarkup(
-				[
-					[
-						InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
-						InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
-                        
-					],
-                    [
-                        InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
-						InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
-                    ],
-                    [
-                        InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin"),
-                        InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
-
-                    ]
-					
-				]
+				[[
+		                InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
+                                InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
+                                ],[
+                                InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
+				InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
+                                ],[
+                                InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin"),
+                                InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
+                                ]]
 			)
 		)
         return
@@ -211,7 +197,7 @@ async def _insta_post_batch(bot, message):
             is_followed = yes_or_no(profile.followed_by_viewer) 
             is_following = yes_or_no(profile.follows_viewer)
             type = acc_type(profile.is_private)
-            if type == "🔒Private🔒" and is_followed == "No":
+            if type == "🔒 Private 🔒" and is_followed == "No":
                 print("reached")
                 reply_markup=InlineKeyboardMarkup(
                     [
